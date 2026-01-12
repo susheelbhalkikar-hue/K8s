@@ -1,0 +1,51 @@
+# - Means Comment
+# Ignored By Kubernetes
+
+# Simple Key Values
+Key: value
+name: sush
+course: devops
+time: 8
+
+# Dictionaries: set of key Values
+trainer:
+  name: sush
+  course: devops
+  time: 8
+
+# Lists: Multiple Items
+courses:
+- devops
+- aws
+- python
+
+# Objets are represented using YAML
+
+#Every Object has 4 top level yaml items
+apiVersion:
+kind:
+metadata:
+spec:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app.kubernetes.io/name: MyApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
