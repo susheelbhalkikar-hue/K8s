@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  # Unique key of the ReplicaSet instance
+  # Unique key of the Deployment instance
   name: nginx
 spec:
   # 3 Pods should exist at all times.
@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: nginx
-  template: # pod template
+  template:
     metadata:
       labels:
         app: nginx
